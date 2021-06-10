@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E91AF326-6F87-4C96-A886-C06B349C5C75}</ProjectGuid>
+    <ProjectGuid>{72BAB804-EBE5-4D2C-BE03-FC2373F9ABAF}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Mist</RootNamespace>
-    <AssemblyName>Mist</AssemblyName>
+    <RootNamespace>Encoders</RootNamespace>
+    <AssemblyName>Encoders</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -58,7 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Delay.cs" />
+    <Compile Include="Ceasarus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
